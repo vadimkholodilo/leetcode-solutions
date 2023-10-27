@@ -98,12 +98,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="max_consecutive_ones_solution.h" />
+    <ClInclude Include="move_zeros.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="valid_anagram_solution.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="max_consecutive_ones_solution.cpp" />
     <ClCompile Include="max_consecutive_ones_tests.cpp" />
+    <ClCompile Include="move_zeros.cpp" />
+    <ClCompile Include="move_zeros_tests.cpp" />
     <ClCompile Include="valid_anagram_solution.cpp" />
     <ClCompile Include="valid_anagram_tests.cpp" />
     <ClCompile Include="pch.cpp">
