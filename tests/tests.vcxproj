@@ -97,12 +97,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="generate_parenthesis.h" />
     <ClInclude Include="max_consecutive_ones_solution.h" />
     <ClInclude Include="move_zeros.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="valid_anagram_solution.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="generate_parenthesis.cpp" />
+    <ClCompile Include="generate_parenthesis_tests.cpp" />
     <ClCompile Include="max_consecutive_ones_solution.cpp" />
     <ClCompile Include="max_consecutive_ones_tests.cpp" />
     <ClCompile Include="move_zeros.cpp" />
