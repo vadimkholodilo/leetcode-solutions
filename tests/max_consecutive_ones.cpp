@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "max_consecutive_ones_solution.h"
+#include "max_consecutive_ones.h"
 using namespace std;
 
 int Solution::findMaxConsecutiveOnes(vector<int>& nums) {

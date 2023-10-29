@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "valid_anagram_solution.h"
+#include "valid_anagram.h"
 using namespace std;
 namespace LeetcodeSolutions {
 	TEST(ValidAnagram, ShouldReturnFalseIfStringsHaveDifferentLength) {

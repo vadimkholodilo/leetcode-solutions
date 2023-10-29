@@ -1,6 +1,6 @@
 #include "pch.h"
 #include <vector>
-#include "max_consecutive_ones_solution.h"
+#include "max_consecutive_ones.h"
 
 using namespace std;
 namespace LeetcodeSolutions {
