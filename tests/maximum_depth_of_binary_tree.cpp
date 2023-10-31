@@ -2,7 +2,7 @@
 #include "maximum_depth_of_binary_tree.h"
 using namespace std;
 int Solution::maxDepth(TreeNode* root) {
-if (!root) {
+if (root == nullptr) {
 return 0;
 }
 int maxLeft = maxDepth(root->left);
