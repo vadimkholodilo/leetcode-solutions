@@ -98,6 +98,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="generate_parenthesis.h" />
+    <ClInclude Include="maximum_depth_of_binary_tree.h" />
     <ClInclude Include="max_consecutive_ones.h" />
     <ClInclude Include="move_zeros.h" />
     <ClInclude Include="pch.h" />
@@ -108,6 +109,8 @@
   <ItemGroup>
     <ClCompile Include="generate_parenthesis.cpp" />
     <ClCompile Include="generate_parenthesis_tests.cpp" />
+    <ClCompile Include="maximum_depth_of_binary_tree.cpp" />
+    <ClCompile Include="maximum_depth_of_binary_tree_tests.cpp" />
     <ClCompile Include="max_consecutive_ones.cpp" />
     <ClCompile Include="max_consecutive_ones_tests.cpp" />
     <ClCompile Include="move_zeros.cpp" />
