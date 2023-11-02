@@ -98,6 +98,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="generate_parenthesis.h" />
+    <ClInclude Include="longest_substring_without_repeating_characters.h" />
     <ClInclude Include="maximum_depth_of_binary_tree.h" />
     <ClInclude Include="max_consecutive_ones.h" />
     <ClInclude Include="minimum_size_subarray_sum.h" />
@@ -111,6 +112,8 @@
   <ItemGroup>
     <ClCompile Include="generate_parenthesis.cpp" />
     <ClCompile Include="generate_parenthesis_tests.cpp" />
+    <ClCompile Include="longest_substring_without_repeating_characters.cpp" />
+    <ClCompile Include="longest_substring_without_repeating_characters_tests.cpp" />
     <ClCompile Include="maximum_depth_of_binary_tree.cpp" />
     <ClCompile Include="maximum_depth_of_binary_tree_tests.cpp" />
     <ClCompile Include="max_consecutive_ones.cpp" />
