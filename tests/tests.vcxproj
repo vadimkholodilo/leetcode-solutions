@@ -100,6 +100,7 @@
     <ClInclude Include="generate_parenthesis.h" />
     <ClInclude Include="maximum_depth_of_binary_tree.h" />
     <ClInclude Include="max_consecutive_ones.h" />
+    <ClInclude Include="minimum_size_subarray_sum.h" />
     <ClInclude Include="move_zeros.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="reverse_linked_list.h" />
@@ -114,6 +115,8 @@
     <ClCompile Include="maximum_depth_of_binary_tree_tests.cpp" />
     <ClCompile Include="max_consecutive_ones.cpp" />
     <ClCompile Include="max_consecutive_ones_tests.cpp" />
+    <ClCompile Include="minimum_size_subarray_sum.cpp" />
+    <ClCompile Include="minimum_size_subarray_sum_tests.cpp" />
     <ClCompile Include="move_zeros.cpp" />
     <ClCompile Include="move_zeros_tests.cpp" />
     <ClCompile Include="reverse_linked_list.cpp" />
