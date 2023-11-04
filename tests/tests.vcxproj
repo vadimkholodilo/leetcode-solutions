@@ -100,6 +100,7 @@
     <ClInclude Include="generate_parenthesis.h" />
     <ClInclude Include="longest_substring_without_repeating_characters.h" />
     <ClInclude Include="maximum_depth_of_binary_tree.h" />
+    <ClInclude Include="maximum_number_of_vowels_in_a_string.h" />
     <ClInclude Include="max_consecutive_ones.h" />
     <ClInclude Include="minimum_size_subarray_sum.h" />
     <ClInclude Include="move_zeros.h" />
@@ -117,6 +118,8 @@
     <ClCompile Include="longest_substring_without_repeating_characters_tests.cpp" />
     <ClCompile Include="maximum_depth_of_binary_tree.cpp" />
     <ClCompile Include="maximum_depth_of_binary_tree_tests.cpp" />
+    <ClCompile Include="maximum_number_of_vowels_in_a_string.cpp" />
+    <ClCompile Include="maximum_number_of_vowels_in_a_string_tests.cpp" />
     <ClCompile Include="max_consecutive_ones.cpp" />
     <ClCompile Include="max_consecutive_ones_tests.cpp" />
     <ClCompile Include="minimum_size_subarray_sum.cpp" />
