@@ -107,6 +107,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="reverse_linked_list.h" />
     <ClInclude Include="reverse_vowels_of_a_string.h" />
+    <ClInclude Include="reverse_words_in_a_string.h" />
     <ClInclude Include="single_number.h" />
     <ClInclude Include="two_sum_ii_input_array_is_sorted.h" />
     <ClInclude Include="valid_anagram.h" />
@@ -131,6 +132,8 @@
     <ClCompile Include="reverse_linked_list_tests.cpp" />
     <ClCompile Include="reverse_vowels_of_a_string.cpp" />
     <ClCompile Include="reverse_vowels_of_a_string_tests.cpp" />
+    <ClCompile Include="reverse_words_in_a_string.cpp" />
+    <ClCompile Include="reverse_words_in_a_string_tests.cpp" />
     <ClCompile Include="single_number.cpp" />
     <ClCompile Include="single_number_tests.cpp" />
     <ClCompile Include="two_sum_ii_input_array_is_sorted.cpp" />
