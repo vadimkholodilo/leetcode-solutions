@@ -111,6 +111,7 @@
     <ClInclude Include="reverse_words_in_a_string.h" />
     <ClInclude Include="single_number.h" />
     <ClInclude Include="two_sum_ii_input_array_is_sorted.h" />
+    <ClInclude Include="unique_number_of_occurrences.h" />
     <ClInclude Include="valid_anagram.h" />
     <ClInclude Include="valid_parenthesis.h" />
   </ItemGroup>
@@ -141,6 +142,8 @@
     <ClCompile Include="single_number_tests.cpp" />
     <ClCompile Include="two_sum_ii_input_array_is_sorted.cpp" />
     <ClCompile Include="two_sum_ii_input_array_is_sorted_tests.cpp" />
+    <ClCompile Include="unique_number_of_occurrences.cpp" />
+    <ClCompile Include="unique_number_of_occurrences_tests.cpp" />
     <ClCompile Include="valid_anagram.cpp" />
     <ClCompile Include="valid_anagram_tests.cpp" />
     <ClCompile Include="pch.cpp">
