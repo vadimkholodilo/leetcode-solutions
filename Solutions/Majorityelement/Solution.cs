@@ -29,6 +29,20 @@ public class Solution
 
     public int MajorityElementWithoutHashTable(int[] nums)
     {
-        return 0;
+        int candidate = 0;
+        int count = 0;
+
+        foreach (var num in nums)
+        {
+            if (count == 0)
+                candidate = num;
+
+            if (candidate == num)
+                count++;
+            else
+                count--;
+        }
+
+        return candidate;
     }
 }

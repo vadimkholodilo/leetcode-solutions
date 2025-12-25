@@ -13,6 +13,6 @@ public class MajorityelementTests
     {
         var solution = new Solution();
         Assert.Equal(majorityElement, solution.MajorityElement(nums));
-        //Assert.Equal(majorityElement, solution.MajorityElementWithoutHashTable(nums));
+        Assert.Equal(majorityElement, solution.MajorityElementWithoutHashTable(nums));
     }
 }
