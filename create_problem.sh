@@ -3,6 +3,13 @@
 # Function to convert string to PascalCase (for C# class names and namespaces)
 to_pascal_case() {
     local input="$1"
+
+    # Check if the input is already in PascalCase (starts with uppercase followed by mixed case)
+    if [[ "$input" =~ ^[A-Z][a-zA-Z0-9]*$ ]]; then
+        echo "$input"
+        return
+    fi
+
     # Replace hyphens and underscores with spaces, then convert to title case
     echo "$input" | sed -E 's/[_-]/ /g' | awk '{
         for(i=1; i<=NF; i++) {
