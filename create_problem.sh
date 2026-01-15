@@ -3,6 +3,13 @@
 # Function to convert string to PascalCase (for C# class names and namespaces)
 to_pascal_case() {
     local input="$1"
+
+    # Check if the input is already in PascalCase (starts with uppercase followed by mixed case)
+    if [[ "$input" =~ ^[A-Z][a-zA-Z0-9]*$ ]]; then
+        echo "$input"
+        return
+    fi
+
     # Replace hyphens and underscores with spaces, then convert to title case
     echo "$input" | sed -E 's/[_-]/ /g' | awk '{
         for(i=1; i<=NF; i++) {
@@ -11,6 +18,20 @@ to_pascal_case() {
         $0 = $0 " "
         gsub(/ /, "")
     }1'
+}
+
+# Function to convert PascalCase to kebab-case (for branch names)
+to_kebab_case() {
+    local input="$1"
+
+    # If the input is in PascalCase, convert to kebab-case
+    if [[ "$input" =~ ^[A-Z][a-zA-Z0-9]*$ ]]; then
+        # Insert hyphens before capital letters (except the first one) and convert to lowercase
+        echo "$input" | sed -E 's/(.)([A-Z])/\1-\2/g' | tr '[:upper:]' '[:lower:]'
+    else
+        # If it's already in kebab-case or snake_case, normalize it
+        echo "$input" | sed 's/_/-/g' | tr '[:upper:]' '[:lower:]'
+    fi
 }
 
 # Check if argument is provided
@@ -65,7 +86,26 @@ public class ${FORMATTED_NAME}Tests
 }
 EOF
 
+# Get the branch name in kebab-case format
+BRANCH_NAME=$(to_kebab_case "$PROBLEM_NAME")
+
+# Check if branch already exists
+if git show-ref --verify --quiet "refs/heads/$BRANCH_NAME"; then
+    echo "Branch $BRANCH_NAME already exists, switching to it"
+    git checkout "$BRANCH_NAME" || {
+        echo "Error: Could not switch to branch $BRANCH_NAME"
+        exit 1
+    }
+else
+    echo "Creating new branch: $BRANCH_NAME"
+    git checkout -b "$BRANCH_NAME" || {
+        echo "Error: Could not create branch $BRANCH_NAME"
+        exit 1
+    }
+fi
+
 echo "Created problem directory and Solution class for: $FORMATTED_NAME"
 echo "Directory: $SOLUTIONS_DIR"
 echo "File: $SOLUTIONS_DIR/Solution.cs"
 echo "Test File: $TEST_FILE_PATH"
+echo "Branch created: $BRANCH_NAME"

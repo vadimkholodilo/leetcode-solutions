@@ -4,7 +4,7 @@ using Solutions.Stringcompression;
 
 namespace Tests;
 
-public class StringcompressionTests
+public class StringCompressionTests
 {
     [Theory]
     [InlineData("aabbccc", 6, "a2b2c3")]

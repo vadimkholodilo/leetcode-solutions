@@ -3,7 +3,7 @@ using Solutions.Longestsubstringwithoutrepeatingcharacters;
 
 namespace Tests;
 
-public class LongestsubstringwithoutrepeatingcharactersTests
+public class LongestSubstringWithoutRepeatingCharactersTests
 {
     [Theory]
     [InlineData("abcabcbb", 3)]
