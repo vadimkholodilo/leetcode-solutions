@@ -3,7 +3,7 @@ using Solutions.Besttimetobuyandsellstock;
 
 namespace Tests;
 
-public class BesttimetobuyandsellstockTests
+public class BestTimeToBuyAndSellStockTests
 {
     [Theory]
     [InlineData(new int[] {}, 0)]

@@ -3,7 +3,7 @@ using Solutions.Majorityelement;
 
 namespace Tests;
 
-public class MajorityelementTests
+public class MajorityElementTests
 {
     [Theory]
     [InlineData(new [] { 1 }, 1)]

@@ -3,7 +3,7 @@ using Solutions.Rotatearray;
 
 namespace Tests;
 
-public class RotatearrayTests
+public class RotateArrayTests
 {
     [Theory]
     [InlineData(new int[] {}, 1, new int[] {})]
