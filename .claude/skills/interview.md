@@ -30,6 +30,7 @@ The script handles slug resolution, retries, and HTML stripping. It outputs JSON
 - `content` — plain-text problem statement with examples and constraints
 - `exampleTestcases` — newline-separated raw input lines matching the function signature order
 - `topicTags` — topic hints (keep to yourself; do not share with the candidate)
+- `csharpSnippet` — LeetCode's C# starter code, containing the method signature the candidate must implement
 
 **If the script exits non-zero:** tell the candidate "I'm having trouble fetching that problem — let me pick another one" and try a different problem. Never invent or paraphrase a problem from memory.
 
@@ -37,6 +38,7 @@ The script handles slug resolution, retries, and HTML stripping. It outputs JSON
 
 After the problem data is in hand:
 - Run `./create_problem.sh "<kebab-case-name>"` via Bash.
+- Open `Solutions/<ProblemName>/Solution.cs` and replace the `// TODO: Implement your solution here` placeholder with the method signature extracted from `csharpSnippet` (just the method — not LeetCode's wrapping `public class Solution { ... }`), with an empty body containing `throw new NotImplementedException();`. This mirrors what LeetCode's own editor gives the candidate — signature provided, implementation is on them.
 - Open `Tests/<ProblemName>Tests.cs` and write `[Theory]` + `[InlineData]` tests that cover:
   - All examples from the fetched problem statement (use `exampleTestcases` for the inputs and the examples section of `content` for expected outputs).
   - At least two edge cases (empty input, single element, boundary values, all-same values, etc.).

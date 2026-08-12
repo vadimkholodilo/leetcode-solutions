@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Fetch a LeetCode problem by its frontend problem number.
 # Usage: ./fetch_leetcode_problem.sh <problem-number>
-# Outputs JSON: { title, difficulty, content, exampleTestcases, topicTags }
+# Outputs JSON: { title, difficulty, content, exampleTestcases, topicTags, csharpSnippet }
 # content is plain text (HTML stripped). Exits 1 on failure.
 
 set -euo pipefail
@@ -37,7 +37,7 @@ fetch_by_slug() {
     -H "User-Agent: $UA" \
     --max-time 10 \
     -d "{
-      \"query\": \"query(\$s:String!){ question(titleSlug:\$s){ title difficulty content exampleTestcases topicTags{ name } } }\",
+      \"query\": \"query(\$s:String!){ question(titleSlug:\$s){ title difficulty content exampleTestcases topicTags{ name } codeSnippets{ langSlug code } } }\",
       \"variables\": { \"s\": \"$slug\" }
     }"
 }
@@ -72,12 +72,18 @@ q = (data.get('data') or {}).get('question')
 if not q or not q.get('title'):
     sys.exit(1)
 
+csharp_snippet = next(
+    (s['code'] for s in (q.get('codeSnippets') or []) if s.get('langSlug') == 'csharp'),
+    ''
+)
+
 out = {
     'title':            q['title'],
     'difficulty':       q['difficulty'],
     'content':          strip_html(q.get('content', '')),
     'exampleTestcases': q.get('exampleTestcases', ''),
     'topicTags':        [t['name'] for t in q.get('topicTags') or []],
+    'csharpSnippet':    csharp_snippet,
 }
 print(json.dumps(out, ensure_ascii=False, indent=2))
 "
