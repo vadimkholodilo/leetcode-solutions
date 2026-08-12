@@ -11,7 +11,7 @@
 ### Day 1 — Array + Hash Table
 | Done | # | Problem | Difficulty | Tags |
 |---|---|---------|------------|------|
-| [ ] | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy | Array, Hash Table |
+| [x] | 1 | [Two Sum](https://leetcode.com/problems/two-sum/) | Easy | Array, Hash Table |
 | [ ] | 53 | [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) | Medium | Array |
 | [ ] | 238 | [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) | Medium | Array |
 
