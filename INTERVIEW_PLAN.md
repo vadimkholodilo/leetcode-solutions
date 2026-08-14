@@ -18,7 +18,7 @@
 ### Day 2 — Two Pointers
 | Done | # | Problem | Difficulty | Tags |
 |---|---|---------|------------|------|
-| [ ] | 977 | [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | Easy | Array, Two Pointers |
+| [x] | 977 | [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/) | Easy | Array, Two Pointers |
 | [ ] | 11 | [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) | Medium | Array, Two Pointers |
 | [ ] | 15 | [3Sum](https://leetcode.com/problems/3sum/) | Medium | Array, Two Pointers |
 
