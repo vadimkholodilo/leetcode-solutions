@@ -24,7 +24,7 @@
 ### Day 3 — String + Hash Table
 | Done | # | Problem | Difficulty | Tags |
 |---|---|---------|------------|------|
-| [ ] | 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Easy | String, Hash Table |
+| [x] | 242 | [Valid Anagram](https://leetcode.com/problems/valid-anagram/) | Easy | String, Hash Table |
 | [ ] | 383 | [Ransom Note](https://leetcode.com/problems/ransom-note/) | Easy | String, Hash Table |
 | [ ] | 49 | [Group Anagrams](https://leetcode.com/problems/group-anagrams/) | Medium | String, Hash Table |
 
