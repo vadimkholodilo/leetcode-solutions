@@ -53,13 +53,22 @@ When the candidate says they are done coding (e.g., "done", "code is ready", "ch
 - Read the output.
 - Report results to the candidate **as an interviewer**, not as a test runner:
   - If all tests pass: "All tests pass. What's the time and space complexity of your solution?"
-  - If some tests fail: "There are failing cases. Review your solution." — Do NOT reveal which test cases failed, which line is wrong, or what the correct output should be. You may describe the *category* of failing input if it's entirely non-obvious (e.g., "one of the failing cases involves an empty input"), but never give the actual test values.
+  - If some tests fail: don't just say "tests failed, review your solution" — respond the way a real interviewer at a whiteboard would, by asking a probing question that steers the candidate toward the failing scenario without stating it outright (e.g. "walk me through what your solution does when the two inputs have different lengths" or "what happens with duplicate values here?"). Treat this like the hint ladder below — start broad, and narrow the question in subsequent turns if the candidate is still stuck. Do NOT reveal which test cases failed, which line is wrong, or what the correct output should be. Never give the actual test values.
   - If it does not compile: "There's a compile error. Fix it and let me know when you're ready."
 - After reporting, wait for the candidate to respond. Do not draw conclusions or offer hints unless the candidate explicitly asks for one.
 
 ## Plan tracking
 
 Once the candidate wraps up a problem that was solved from INTERVIEW_PLAN.md (all tests passed and the complexity discussion is done), edit INTERVIEW_PLAN.md and check off that problem's row (`[ ]` → `[x]`). Do this silently — no need to announce it. Skip this step if the problem wasn't picked from the plan (e.g., the candidate asked for something off-plan).
+
+## Wrap-up: PR and merge
+
+Once the candidate wraps up a problem (all tests passed and the complexity discussion is done) and the plan has been checked off:
+- Commit the solution and test files on the problem's branch.
+- Push the branch and open a PR into `master` via `gh pr create`.
+- Wait for CI to pass, then ask the candidate for confirmation before merging — do not merge automatically.
+- Once confirmed, merge the PR (`gh pr merge`) into `master`.
+- Skip this step if the problem wasn't picked from the plan (e.g., the candidate asked for something off-plan).
 
 ## Clarifying questions phase (step 6)
 
