@@ -75,6 +75,47 @@ get rewritten to read from `.interview.json` instead of hardcoding
 rules (§ "Your interviewer rules", clarifying questions, hint ladder, tone)
 stay untouched.
 
+## 6. Timed interviews
+
+Optional per-session timer, driven by `timeLimitMinutes` in `.interview.json`
+(or asked at session start if unset — "Want to time this one? How many
+minutes?"). No polling loop needed — Claude Code already has the pieces:
+
+- **Countdown mechanism:** a small background script, started with
+  `run_in_background: true` when the candidate begins coding (after step 7,
+  "take your time... edit Solution.cs"). It sleeps to each checkpoint and
+  echoes a line at each one (e.g. `5 minutes remaining`, `1 minute
+  remaining`, `time is up`), plus a final line at the full deadline. Each
+  echoed line surfaces back into the session as a notification — no manual
+  polling, no repeated `sleep` calls from Claude itself.
+- **In-session surfacing:** use `Monitor` on the backgrounded process so
+  each checkpoint line lands in the transcript as it happens, and the
+  interviewer can react appropriately (e.g. at `time is up`, ask the
+  candidate to wrap up their current thought rather than cutting them off
+  mid-sentence — matches the "professional, neutral" tone already defined).
+- **Out-of-session surfacing:** call `PushNotification` at the same
+  checkpoints so the candidate is pulled back even if they've stopped
+  watching the terminal. Needs verification before relying on it: the tool
+  is documented to skip sending when the user is actively at the terminal
+  (to avoid duplicate/redundant pings), which is the opposite of what a
+  timed interview wants for the 5-minute warning — confirm at
+  implementation time whether that skip is a hard rule or a soft
+  heuristic, and if hard, fall back to the in-transcript `Monitor` message
+  as the only signal while the user is active.
+- **Cleanup:** kill the background timer (`TaskStop` or equivalent) once
+  the candidate signals "done" and tests are verified, so a stale timer
+  doesn't keep firing checkpoints into an already-finished problem.
+- **Config additions to `.interview.json`:** `timeLimitMinutes` (optional;
+  omit for untimed sessions, the default today) and `timerCheckpoints`
+  (optional list of minutes-remaining values to notify at; sensible default
+  e.g. `[5, 1, 0]`).
+- **SKILL.md changes:** add a step between "present the problem" and "wait
+  for the candidate to write their thoughts" to start the timer if
+  configured/requested, and a rule under "Your interviewer rules" for how
+  to react at each checkpoint (warn, don't stop them; at `0` ask them to
+  wrap up, but let them finish if they're mid-fix — a real interviewer
+  doesn't yank the pen out of your hand).
+
 ## Suggested order
 
 1. Define `.interview.json` schema and add one for this repo (C#/.NET,
@@ -86,3 +127,6 @@ stay untouched.
    genericity.
 4. Split out the plan-generation flow into its own skill.
 5. Write a short init flow / README for first-time setup in a new repo.
+6. Add timed interviews (§6): background timer + `Monitor` +
+   `PushNotification`, gated behind `timeLimitMinutes` so untimed sessions
+   are unaffected.
